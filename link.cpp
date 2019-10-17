@@ -16,7 +16,7 @@ public:
 
 	}
 	void insert(int n)
-	{
+	{ //to insert a node in the linked list
 		if (currentNode != 0)
 		{
 			if (currentNode->getNextNode() == 0)
@@ -135,12 +135,6 @@ public:
 		{
 			if (currentNode->getValue() == val)
 			{
-				/*	Node *newNode=new Node();
-					newNode->setnextNode(currentNode->getNextNode());
-					currentNode->setnextNode(newNode);
-					lastCurrentNode=currentNode;
-					currentNode->setValue(n);
-					size++;*/
 				Node *newNode = new Node();
 				newNode->setnextNode(currentNode->getNextNode());
 				currentNode->setnextNode(newNode);
@@ -228,23 +222,23 @@ public:
 			temp = temp->getNextNode();
 		}
 	}
-	void start()
+	void start()//bring the current node at the start of the list
 	{
 		lastCurrentNode = 0;
 		currentNode = headNode;
 	}
-	void move()
+	void move()// move current-node to the next node in the list
 	{
 		lastCurrentNode = currentNode;
 		currentNode = currentNode->getNextNode();
 
 	}
-	int get()
+	int get()//give the value of the current node
 	{
 		return currentNode->getValue();
 	}
 
-	int getSize()
+	int getSize()//give the size of the list
 	{
 		return size;
 	}
